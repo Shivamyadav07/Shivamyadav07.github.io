@@ -43,7 +43,6 @@ section {
 .about,
 .services,
 .skills,
-.teams,
 .contact,
 footer {
   font-family: "Poppins", sans-serif;
@@ -314,9 +313,21 @@ section .title::after {
   margin-top: 40px;
   transition: all 0.3s ease;
 }
+
 .card img {
   height: 250px;
   width: 100%;
+  margin: auto;
+}
+
+.teckStack {
+  color: crimson;
+}
+
+.teckStackList {
+  display: flex;
+  gap: 5px;
+  color: black;
 }
 
 .services .serv-content .card .box {
@@ -363,156 +374,22 @@ section .title::after {
 
 
 /* skills section styling */
-.html {
-  text-align: center;
-  visibility: hidden;
-}
 
-.skill1:hover .html {
-  visibility: visible;
-}
-
-.mycss {
-  text-align: center;
-  visibility: hidden;
-}
-
-.skill2:hover .mycss {
-  visibility: visible;
-}
-
-.javascript {
-  text-align: center;
-  visibility: hidden;
-}
-
-.skill3:hover .javascript {
-  visibility: visible;
-}
-
-.nodejs {
-  text-align: center;
-  visibility: hidden;
-}
-
-.skill4:hover .nodejs {
-  visibility: visible;
-}
-
-.mongodb {
-  text-align: center;
-  visibility: hidden;
-}
-
-.skill5:hover .mongodb {
-  visibility: visible;
-}
-
-.react {
-  text-align: center;
-  visibility: hidden;
-}
-
-.skill6:hover .react {
-  visibility: visible;
-}
-
-.redux {
-  text-align: center;
-  visibility: hidden;
-}
-
-.skill7:hover .redux {
-  visibility: visible;
-}
 
 .skills {
   color: #fff;
   background: #111;
 }
 
-.skills .skills-content .column {
-  width: calc(50% - 30px);
+.skillContainer {
+  text-align: center;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.skills .skills-content .left .text {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.skills .skills-content .left p {
-  text-align: justify;
-}
-
-.skills .skills-content .left a {
-  display: inline-block;
-  background: crimson;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 500;
-  padding: 8px 16px;
-  margin-top: 20px;
-  border-radius: 6px;
-  border: 2px solid crimson;
-  transition: all 0.3s ease;
-}
-
-.skills .skills-content .left a:hover {
-  color: crimson;
-  background: none;
-}
-
-.skills .skills-content .right .bars {
-  margin-bottom: 15px;
-}
-
-.skills .skills-content .right .info {
-  display: flex;
-  margin-bottom: 5px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.skills .skills-content .right span {
-  font-weight: 500;
-  font-size: 18px;
-}
-
-.skills .skills-content .right .line {
-  height: 5px;
-  width: 100%;
-  background: lightgrey;
-  position: relative;
-}
-
-.skills .skills-content .right .line::before {
-  content: "";
-  position: absolute;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: crimson;
-}
-
-.skills-content .right .html::before {
-  width: 90%;
-}
-
-.skills-content .right .css::before {
-  width: 60%;
-}
-
-.skills-content .right .js::before {
-  width: 80%;
-}
-
-.skills-content .right .php::before {
-  width: 50%;
-}
-
-.skills-content .right .mysql::before {
-  width: 70%;
+.skills-content {
+  justify-content: center;
 }
 
 .skills-content img {
@@ -520,6 +397,7 @@ section .title::after {
   width: 85px;
 }
 
+/* -------------------------------------------------------------------------------- */
 
 /* contact section styling */
 .contact {
@@ -532,18 +410,51 @@ section .title::after {
   display: flex;
 }
 
+/* ------------------------------github section------------------------ */
+.gitStatsImg {
+  width: 50%;
+}
 
-/* responsive media query start */
-@media (max-width: 1104px) {
+.gitStats .title,.gitCalendar .title {
+  position: relative;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  font-family: "Ubuntu", sans-serif;
+}
+
+/*----------------------------- responsive media query start ---------------------------*/
+@media (max-width: 1230px) {
   .about .about-content .left img {
     height: 350px;
     width: 350px;
+  }
+
+  .skills-content {
+    justify-content: center;
+  }
+
+  .services .serv-content .card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
+  }
+
+  .gitStatsImg {
+    width: 50%;
   }
 }
 
 @media (max-width: 991px) {
   .max-width {
     padding: 0 50px;
+  }
+
+  .services .serv-content .card {
+    width: calc(50% - 10px);
+    margin-bottom: 20px;
   }
 }
 
@@ -624,10 +535,23 @@ section .title::after {
     width: 100%;
     margin-bottom: 35px;
   }
+
+  .contact-content {
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .skills-content {
+    width: 85%;
+    margin: auto;
+    gap: 85px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
 
-@media (max-width: 690px) {
+@media (max-width: 770px) {
   .max-width {
     padding: 0 23px;
   }
@@ -647,6 +571,23 @@ section .title::after {
   .services .serv-content .card {
     width: 100%;
   }
+
+  .skills-content {
+    width: 80%;
+    margin: auto;
+    gap: 80px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .contact-content {
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .gitStatsImg {
+    width: 70%;
+  }
 }
 
 
@@ -664,17 +605,19 @@ section .title::after {
     font-size: 19px;
   }
 
-  .contact .right form .fields {
-    flex-direction: column;
+  .contact-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
   }
 
-  .contact .right form .name,
-  .contact .right form .email {
-    margin: 0;
+  .gitStatsImg {
+    width: 90%;
   }
 
-  .right form .error-box {
-    width: 150px;
+  .email {
+    width: 90%;
   }
 
   .scroll-up-btn {

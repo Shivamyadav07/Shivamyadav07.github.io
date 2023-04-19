@@ -1,42 +1,52 @@
 fetch("https://super-paint-flamingo.glitch.me/PremiumFruits")
-.then((res)=>{
-    console.log(res.data);
-})
-.catch((err)=>{
-    console.log(err.message);
-})
+    .then((res) => {
+        console.log(res.data);
+    })
+    .catch((err) => {
+        console.log(err.message);
+    })
 
-$(document).ready(function(){
-    $(window).scroll(function(){
+function downloadPDF() {
+    const link = document.createElement('a');
+    link.href = `resume/shivam Resume.pdf`;
+    link.target = '_blank';
+    link.download = 'Shivam Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+$(document).ready(function () {
+    $(window).scroll(function () {
         // sticky navbar on scroll script
-        if(this.scrollY > 20){
+        if (this.scrollY > 20) {
             $('.navbar').addClass("sticky");
-        }else{
+        } else {
             $('.navbar').removeClass("sticky");
         }
-        
+
         // scroll-up button show/hide script
-        if(this.scrollY > 500){
+        if (this.scrollY > 500) {
             $('.scroll-up-btn').addClass("show");
-        }else{
+        } else {
             $('.scroll-up-btn').removeClass("show");
         }
     });
 
     // slide-up script
-    $('.scroll-up-btn').click(function(){
-        $('html').animate({scrollTop: 0});
+    $('.scroll-up-btn').click(function () {
+        $('html').animate({ scrollTop: 0 });
         // removing smooth scroll on slide-up button click
         $('html').css("scrollBehavior", "auto");
     });
 
-    $('.navbar .menu li a').click(function(){
+    $('.navbar .menu li a').click(function () {
         // applying again smooth scroll on menu items click
         $('html').css("scrollBehavior", "smooth");
     });
 
     // toggle menu/navbar script
-    $('.menu-btn').click(function(){
+    $('.menu-btn').click(function () {
         $('.navbar .menu').toggleClass("active");
         $('.menu-btn i').toggleClass("active");
     });
@@ -64,15 +74,15 @@ $(document).ready(function(){
         autoplayTimeOut: 2000,
         autoplayHoverPause: true,
         responsive: {
-            0:{
+            0: {
                 items: 1,
                 nav: false
             },
-            600:{
+            600: {
                 items: 2,
                 nav: false
             },
-            1000:{
+            1000: {
                 items: 3,
                 nav: false
             }

@@ -14,7 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
 </head>
 
 <body>
@@ -45,8 +46,10 @@
                 <div class="text-1">Hello, my name is</div>
                 <div class="text-2">Shivam Yadav</div>
                 <div class="text-3">And I'm a <span class="typing"></span></div>
-                <a href="https://drive.google.com/file/d/1JBTNuCDy7CQsChHXkH4mLU0hbUlXegoa/view?usp=sharing"
-                    target="_blank">Resume</a>
+                <a onclick="downloadPDF()"
+                    href="https://drive.google.com/file/d/1JBTNuCDy7CQsChHXkH4mLU0hbUlXegoa/view?usp=sharing"
+                    target="_blank">Resume
+                </a>
             </div>
             <!-- <div><img src="images/shivam  (2).jpg" alt=""></div> -->
         </div>
@@ -79,88 +82,71 @@
         <div class="max-width">
             <h2 class="title">My skills</h2>
             <div class="skills-content">
-                <div class="skill1">
-                    <h3 class="html">HTML</h3>
-                    <img src="https://cdn-icons-png.flaticon.com/128/174/174854.png" alt="">
+                <div class="skillContainer">
+                    <h5>HTML</h5>
+                    <img src="icons/html-5.svg" alt="">
                 </div>
-                <div class="skill2">
-                    <h3 class="mycss">CSS</h3>
-                    <img src="https://cdn-icons-png.flaticon.com/128/732/732190.png" alt="">
-
+                <div class="skillContainer">
+                    <h5>CSS</h5>
+                    <img src="icons/css3.svg" alt="">
                 </div>
-                <div class="skill3">
-                    <h3 class="javascript">JavaScript</h3>
-                    <img src="https://cdn-icons-png.flaticon.com/128/5968/5968292.png" alt="">
-
+                <div class="skillContainer">
+                    <h5>JavaScript</h5>
+                    <img src="icons/javascript.svg" alt="">
                 </div>
-                <div class="skill4">
-                    <h3 class="nodejs">Node JS</h3>
-                    <img src="https://cdn-icons-png.flaticon.com/128/919/919825.png" alt="">
-
+                <div class="skillContainer">
+                    <h5>React</h5>
+                    <img src="icons/reactjs.svg" alt="">
                 </div>
-                <div class="skill5">
-                    <h3 class="mongodb">MongoDB</h3>
-                    <img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="">
-
+                <div class="skillContainer">
+                    <h5>Redux</h5>
+                    <img src="icons/redux.svg" alt="">
                 </div>
-                <div class="skill6">
-                    <h3 class="react">React</h3>
-                    <img src="https://cdn-icons-png.flaticon.com/128/1126/1126012.png" alt="">
-
+                <div class="skillContainer">
+                    <h5>MongoDB</h5>
+                    <img src="icons/mongodb.svg" alt="">
                 </div>
-                <div class="skill7">
-                    <h3 class="redux">Redux</h3>
-                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg"
-                        alt="">
-
+                <div class="skillContainer">
+                    <h5>Tailwind Css</h5>
+                    <img src="icons/tailwindcss-icon.svg" alt="">
                 </div>
-
-                <!-- <div class="column left">
-                        <div class="text">My creative skills & experiences.</div>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, ratione error est recusandae consequatur, iusto illum deleniti quidem impedit, quos quaerat quis minima sequi. Cupiditate recusandae laudantium esse, harum animi aspernatur quisquam et delectus ipsum quam alias quaerat? Quasi hic quidem illum. Ad delectus natus aut hic explicabo minus quod.</p>
-                        <a href="#">Read more</a>
-                    </div> -->
-                <!-- <div class="column right">
-                        <div class="bars">
-                            <div class="info">
-                                <span>HTML</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="line html"></div>
-                        </div>
-                        <div class="bars">
-                            <div class="info">
-                                <span>CSS</span>
-                                <span>60%</span>
-                            </div>
-                            <div class="line css"></div>
-                        </div>
-                        <div class="bars">
-                            <div class="info">
-                                <span>JavaScript</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="line js"></div>
-                        </div>
-                        <div class="bars">
-                            <div class="info">
-                                <span>PHP</span>
-                                <span>50%</span>
-                            </div>
-                            <div class="line php"></div>
-                        </div>
-                        <div class="bars">
-                            <div class="info">
-                                <span>MySQL</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="line mysql"></div>
-                        </div>
-                    </div> -->
+                <div class="skillContainer">
+                    <h5>GitHub</h5>
+                    <img src="icons/git.svg" alt="">
+                </div>
+                <div class="skillContainer">
+                    <h5>Node JS</h5>
+                    <img src="icons/nodejs.svg" alt="">
+                </div>
+                <div class="skillContainer">
+                    <h5>Canva</h5>
+                    <img src="icons/canva-icon.svg" alt="">
+                </div>
             </div>
         </div>
     </section>
 
+    <div class="gitStats">
+        <h2 class="title">GitHub Stats</h2>
+        <p align="center" style="margin-top: 25px;">
+            <img class="gitStatsImg"
+                src="https://github-readme-stats.vercel.app/api?username=shivamyadav07&show_icons=true&locale=en"
+                alt="shivamyadav07" />
+        </p>
+    </div>
+    <div class="gitCalendar" style="width:85%; margin:auto; border-radius: 5px; margin-top: 20px;">
+        <h2 class="title">GitHub Calendar</h2>
+        <div class="calendar">
+            <!-- Loading stuff -->
+            Loading the data just for you.
+        </div>
+    </div>
+
+    <script>
+        GitHubCalendar(".calendar", "Shivamyadav07");
+        // or enable responsive functionality
+        GitHubCalendar(".calendar", "Shivamyadav07", { responsive: true });
+    </script>
     <!-- Project section start -->
     <section class="services" id="services">
         <div class="max-width">
@@ -169,19 +155,48 @@
 
                 <div class="card">
                     <div class="box">
+                        <img src="./images/QuseTime.png">
+                        <div class="text">QuesTime</div>
+                        <p>
+                        <div>
+                            <div>The application provides the features of interview schedulling
+                                and one on one session.
+                            </div>
+                        </div>
+                        <div class="teckStack">Teck Stack :
+                            <div class="teckStackList">
+                                <p>React</p>
+                                <p>Redux</p>
+                                <p>CSS</p>
+                                <p>TypeScript</p>
+                                <p>Chakra UI</p>
+                            </div>
+                        </div>
+                        </p>
+                        <a href="https://github.com/masai-builds/team-4-client-questymes" target="_blank">GitHub</a>
+                        <a href="https://ques-tymes.netlify.app" target="_blank">Demo</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="box">
                         <img src="./images/JioMart.png">
                         <div class="text">JioMart Clone</div>
                         <p>
-                        <ul>
-                            <li>A web application for shopping for clothes and groceries.</li>
-                            <li>Teck Stack
-                                <ul>
-                                    <li>React, Redux</li>
-                                    <li>CSS,JavaScript</li>
-                                    <li>Chakra UI</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <div>
+                            <div>Jio mart is A web application for shopping for clothes
+                                and groceries.
+                            </div>
+                        </div>
+                        <div class="teckStack">Teck Stack
+                            <div class="teckStackList">
+                                <p>React</p>
+                                <p>Redux</p>
+                                <p>CSS</p>
+                                <p>JavaScript</p>
+                                <p>Material UI</p>
+                            </div>
+                        </div>
                         </p>
                         <a href="https://github.com/Shivamyadav07/prickly-partner-2503" target="_blank">GitHub</a>
                         <a href="https://jiomart-prototype.netlify.app/" target="_blank">Demo</a>
@@ -193,16 +208,18 @@
                         <img src="./images/Meesho.png">
                         <div class="text">Meesho Clone</div>
                         <p>
-                        <ul>
-                            <li>An Web app for shopping of clothes, jewellery and more.</li>
-                            <li>Teck Stack
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS,JavaScript</li>
-                                    <li>MERN Stack</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <div>
+                            <div>Meesho Clone is An Web app for shopping of clothes, jewellery and groceries and many
+                                more.</div>
+                        </div>
+                        <div class="teckStack">Teck Stack
+                            <div class="teckStackList">
+                                <p>HTML</p>
+                                <p>CSS</p>
+                                <p>JavaScript</p>
+                                <p>JSON Server</p>
+                            </div>
+                        </div>
                         </p>
                         <a href="https://github.com/Shivamyadav07/Meesho-Clone" target="_blank">GitHub</a>
                         <a href="https://meesho-prototype.netlify.app/" target="_blank">Demo</a>
@@ -216,44 +233,45 @@
                         <img src="./images/Dermstore.png">
                         <div class="text">Dermstore Clone</div>
                         <p>
-                        <ul>
-                            <li>An E-Commerce website for shopping of Beauty products.</li>
-                            <li>Teck Stack
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>JavaScript</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <div>
+                            <div>
+                                Dermstore is US based E-commerce web store which sells cosmetics and skin care products.
+                            </div>
+                        </div>
+                        <div class="teckStack">Teck Stack
+                            <div class="teckStackList">
+                                <p>HTML</p>
+                                <p>CSS</p>
+                                <p>JavaScript</p>
+                            </div>
+                        </div>
                         </p>
                         <a href="https://github.com/Shivamyadav07/dermClone" target="_blank">GitHub</a>
-                        <a href="https://dermstore-prototype.netlify.app//" target="_blank">Demo</a>
+                        <a href="https://dermstore-prototype.netlify.app/" target="_blank">Demo</a>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" style="margin: 50px auto;">
                     <div class="box">
                         <img src="./images/weatherapp.png">
                         <div class="text">Weather App</div>
                         <p>
-                        <ul>
-                            <li>An application for weather forcast of any city</li>
-                            <li>Teck Stack
-                                <ul>
-                                    <li>HTML</li>
-                                    <li>CSS</li>
-                                    <li>JavaScript</li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <div>
+                            <div>An application for weather forcast of any city. We can check Temperature and Humidity
+                            </div>
+                        </div>
+                        <div class="teckStack">Teck Stack
+                            <div class="teckStackList">
+                                <p>HTML</p>
+                                <p>CSS</p>
+                                <p>JavaScript</p>
+                            </div>
+                        </div>
                         </p>
                         <a href="https://github.com/Shivamyadav07/WeatherApp" target="_blank">GitHub</a>
                         <a href="https://weather-app-44.netlify.app/" target="_blank">Demo</a>
                     </div>
                 </div>
-
-
             </div>
         </div>
         </div>
@@ -278,14 +296,14 @@
                         <h4>(+91) 638 696 6400</h4>
                     </span>
                 </div>
-                <div>
+                <div class="email">
                     <span class="icon"><i class="fas fa-envelope"></i></span>
                     <span class="content">
                         <h2>Email</h2>
                         <h4>shivamvnsindia@gmail.com</h4>
                     </span>
                 </div>
-                <div>
+                <div style="margin-top: 25px;">
                     <a href="https://www.linkedin.com/in/shivamyadav007/" target="blank" style="color:white;">
                         <span style="font-size: 22px;" class="iconify icon"
                             data-icon="akar-icons:linkedin-box-fill"></span>
@@ -295,14 +313,13 @@
                     </a>
                     </span>
                 </div>
-                <div>
+                <div style="margin-top: 25px;">
                     <a href="https://github.com/Shivamyadav07" style="color: white;" target="blank">
 
                         <span style="font-size: 22px;" class=" iconify icon" data-icon="akar-icons:github-fill"></span>
                         <span class="content">
                             <h2 style="color: white;">Github</h2>
                     </a>
-
                     </span>
                 </div>
             </div>
