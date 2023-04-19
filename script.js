@@ -8,7 +8,7 @@ fetch("https://super-paint-flamingo.glitch.me/PremiumFruits")
 
 function downloadPDF() {
     const link = document.createElement('a');
-    link.href = `resume/shivam Resume.pdf`;
+    link.href = `resume/Shivam Resume.pdf`;
     link.target = '_blank';
     link.download = 'Shivam Resume.pdf';
     document.body.appendChild(link);
